@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12">
+    <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-fluid">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h1> {{ recipe.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <!--<div class="dropdown">-->
+      <!--<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+        <!--Dropdown trigger-->
+      <!--</button>-->
+      <!--<div class="dropdown-menu" aria-labelledby="dLabel">-->
+        <!--<li class=""><a href="#">Shopping List</a></li>-->
+        <!--<li class=""><a href="#">Edit Recipe</a></li>-->
+        <!--<li class=""><a href="#"></a>Delete Recipe</li>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div appDropDown class="btn-group">
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Manage Recipe</button>
+      <ul class="dropdown-menu">
+        <li class=""><a style="cursor: pointer" (click)="addToShoppingList()">Move to Shopping List</a></li>
+        <li class=""><a style="cursor: pointer" (click)="onEditRecipe()">Edit Recipe</a></li>
+        <li class=""><a style="cursor: pointer" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+      </ul>
+    </div>
+    <!--<div class="btn-group">-->
+      <!--<button class=" dropdown dropdown-toggle" appDropDown>-->
+        <!--<a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropDown">Manage</a></button>-->
+        <!--<div class="dropdown-menu" area-labelledby="dropDown">-->
+          <!--<a class="dropdown-item" href="#">Shopping List</a>-->
+          <!--<a class="dropdown-item" href="#">Edit Recipe</a>-->
+        <!--</div>-->
+    <!--</div>-->
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    {{recipe.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <li class="list-group-item"
+      *ngFor="let ingrideints of recipe.ingredients">
+        {{ingrideints.name}}-{{ingrideints.amount}}
+      </li>
+    </ul>
+  </div>
+</div>
